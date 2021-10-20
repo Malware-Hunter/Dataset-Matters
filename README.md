@@ -7,8 +7,11 @@ Diretório 0_Originals_Datasets => Contém todos os 4 datasets originais utiliza
   Links dos Datasets originais disponíveis para download:
 
   Drebin-215           >> https://figshare.com/articles/dataset/Android_malware_dataset_for_machine_learning_2/5854653
+  
   Androcrawl           >> https://github.com/phretor/ransom.mobi/blob/gh-pages/f/filter.7z
+  
   AndroidMalwareNormal >> https://figshare.com/articles/dataset/Data_set_of_Android_permissions/5986708/8
+  
   DefenseDroid         >> https://www.kaggle.com/defensedroid/android-malware-detection
 
 Diretório 1_Permissions_Extraction => Contém todo o passo a passo do tratamento dos dados e extração de permissões dos datasets originais. Estão inclusos também o tratamento dos dados e permissões duplicadas, e features irrelevantes para o estudo.
