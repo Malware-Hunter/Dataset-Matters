@@ -3,7 +3,7 @@
 Esse trabalho tem como objetivo analisar o impacto no desempenho do algoritmo de classificação RandomForest em datasets de diferentes datas (2012, 2015, 2018 e 2021), utilizando apenas as permissões de aplicativos Android. Os diretórios desse repositório serão explicados a seguir:
 
 ### Diretório 0_Datasets_Sources 
-=> Contém todos os 4 datasets originais utilizados nesse estudo, são eles: Drebin-215, Androcrawl, AndroidMalwareNormal e DefenseDroid, em ordem do mais antigo para o mais atual, respetivamente. Como o tamanho do dataset Androcrawl excede o limite do GitHub, deixamos ele compactado.
+=> Contém todos os 4 datasets originais utilizados nesse estudo, são eles: Drebin-215, Androcrawl, AndroidMalwareNormal e DefenseDroid, em ordem do mais antigo para o mais atual, respectivamente. Como o tamanho do dataset Androcrawl excede o limite do GitHub, deixamos ele compactado.
 
   Links dos Datasets originais disponíveis para download:
 
