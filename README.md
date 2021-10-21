@@ -29,3 +29,6 @@ Esse trabalho tem como objetivo analisar o impacto no desempenho do algoritmo de
 
 ### Diretório 5_RandomForest_Metrics
 => Contém os códigos referentes ao desempenho do modelo de classificação RandomForest em cada dataset (com e se duplicatas).
+
+### Diretório 6_Data_Exploration
+=> Contém os códigos referentes a análise exploratória dos conjuntos de dados (com e sem duplicatas).
