@@ -4,7 +4,7 @@ Continuação do trabalho do Impacto de Viés nos modelos (Versão estendida).
 
 ## Diretórios
 
-*OBS:* Registros duplicados ou duplicatas, são APKs duplicados no conjunto de dados, ou seja, amostras de aplicativos Android que contém todas as mesmas características que outra. Consideramos um registro como sendo duplicado, ao encontrarmos outra amostra com seus mesmos valores, considerando todas as colunas (características), ao primeiro contato com o dataset.
+*OBS: Registros duplicados ou duplicatas, são APKs duplicados no conjunto de dados, ou seja, amostras de aplicativos Android que contém todas as mesmas características que outra. Consideramos um registro como sendo duplicado, ao encontrarmos outra amostra com seus mesmos valores, considerando todas as colunas (características), ao primeiro contato com o dataset.*
 
 ### Diretório 0_Datasets_Sources
 Contém todos os datasets originais, sem modificação. Apenas o Kronodroid e AndroidMalwareNormal foram gerados com a concatenação entre os datasets benignos e malignos. O MotoDroid_22K é um conjunto de dados criado pela nossa equipe com amostras de aplicativos Android atuais (2018+).
