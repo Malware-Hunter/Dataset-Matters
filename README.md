@@ -4,9 +4,9 @@ Trabalho sobre Análise de Viés nos Conjuntos de Dados para Detecção de Malwa
 
 Apresentamos duas versões do trabalho nos seguintes diretórios:
 
-    * WRSeg2021 (Versão reduzida)
+    * WRSeg2021 (trabalho original)
 
-    * ReABTIC2021 (Versão estendida)
+    * ReABTIC2021 (versão estendida do trabalho original)
 
 ## WRSeg2021
 
