@@ -4,8 +4,10 @@ Continuação do trabalho do Impacto de Viés nos modelos (Versão estendida).
 
 ## Diretórios
 
+*OBS:* Registros duplicados ou duplicatas, são APKs duplicados no conjunto de dados, ou seja, amostras de aplicativos Android que contém todas as mesmas características que outra. Consideramos um registro como sendo duplicado, ao encontrarmos outra amostra com seus mesmos valores, considerando todas as colunas (características), ao primeiro contato com o dataset.
+
 ### Diretório 0_Datasets_Sources
-Contém todos os datasets originais, sem modificação. Apenas o Kronodroid foi a concatenação do dataset benigno com o dataset maligno. O MotoDroid_22K é um conjunto de dados criado pela nossa equipe.
+Contém todos os datasets originais, sem modificação. Apenas o Kronodroid e AndroidMalwareNormal foram gerados com a concatenação entre os datasets benignos e malignos. O MotoDroid_22K é um conjunto de dados criado pela nossa equipe com amostras de aplicativos Android atuais (2018+).
 
 ### Diretório 1_Data_Preparation
 Contém os códigos referentes à preparação dos dados nos datasets. Na preparação foi realizada uma limpeza nos dados e foram selecionadas apenas as permissões como características relevantes para o estudo. 
@@ -31,14 +33,18 @@ Através dos datasets originais, nós geramos 28 novos datasets contendo apenas 
 Os registros duplicados são exemplos de aplicativos que possuem todas as suas características iguais a outro exemplo. Essas duplicatas podem causar viés no modelo na hora de predizer a classe de um aplicativo Android, pois o mesmo saberá predizer corretamente se aquele aplicativo Android é malicioso ou não sem aprender.
 
 ### Diretório 2_Only_Permissions_Datasets
-Contém os datasets incluindo apenas as permissões Android como características (com e sem duplicatas).
+Contém os datasets incluindo todas as permissões Android presentes como características (com e sem duplicatas).
 
-### Diretório 3_Permissions_Datasets_Intersection
-Contém os dois experimentos de datasets incluindo as mesmas permissões:
+### Diretório 3_Only_Permissions_Datasets
+Contém os datasets com as mesmas permissões em comum (com e se duplicatas):
 
-   1° A intersecção de 4 datasets: Drebin215, Androcrawl, AndroidMalwareNormal e DefenseDroid;
+   **13_Permissions**
+   
+   A intersecção de 4 datasets: Drebin215, Androcrawl, AndroidMalwareNormal e DefenseDroid;
 
-   2° A intersecção de 4 datasets: Drebin215, Kronodroid, DefenseDroid e MotoDroid_22K.
+   **55_Permissions**
+   
+   A intersecção de 4 datasets: Drebin215, Kronodroid, DefenseDroid e MotoDroid_22K.
 
 ### Diretório 4_Datasets_Permissions_After_sigPID
 Contém os datasets finais após a aplicação do sigPID nos datasets do diretório 2.
@@ -47,7 +53,7 @@ Contém os datasets finais após a aplicação do sigPID nos datasets do diretó
 Contém os códigos referentes a redução de amostras de aplicativos (benignos e malignos) a fim de nivelar a mesma quantidade para todos os datasets. Assim, não havera impacto de um modelo ter aprendido mais do que outro.
 
 ### Diretório 6_Leveled_Datasets
-Contém os datasets contendo a mesma quantidade de amostras de aplicativos benignos e malignos (com e sem duplicatas).
+Contém os datasets contendo a mesma quantidade de amostras de aplicativos benignos e malignos (com e sem duplicatas) para cada um dos três experimentos.
 A quantidade de amostras foram niveladas da seguinte forma para todos os datasets em todos os experimentos:
 
    **Sem duplicatas**
@@ -63,20 +69,20 @@ A quantidade de amostras foram niveladas da seguinte forma para todos os dataset
       * Malignos >> 5.560
 
 ### Diretório 7_Model_Test
-Contém os códigos referentes ao desempenho do modelo RandomForest em detectar aplicativos maliciosos.
-Nesse diretório, há três experimentos: um utilizando todas as permissões dos datasets, e dois utilizando datasets com as mesmas permissões, citadas no Diretório 3. Também há um quarto Experimento onde foram realizados testes para analisar o desempenho do modelo em classificar os APKs nos datasets de permissões antes e depois da aplicação do SigPID, sendo que para cada dataset, adequamos o modelo para aquele conjunto de dados testado.
+Contém os códigos referentes ao desempenho do modelo RandomForest em detectar aplicativos Android maliciosos.
+Nesse diretório, há três experimentos: um utilizando todas as permissões dos datasets, e dois utilizando datasets com as mesmas permissões em comum, citadas no Diretório 3. Também há um quarto Experimento onde foram realizados testes para analisar o desempenho do modelo em classificar os APKs nos datasets de permissões antes e depois da aplicação do SigPID (método que reduz a quantidade de características, com a finalidade de manter as mais relevantes para os cálculos do modelo), sendo que para cada dataset, adequamos o modelo para aquele conjunto de dados testado.
 
-**Permission_tests**
+**All_Permissions**
 
-   Contém os códigos referentes ao desempenho do modelo adequado para o Drebin (2012) para classificar APKs em datasets mais recentes utilizando todas as suas permissões.
+   Contém os códigos referentes ao desempenho do modelo, adequado ao Drebin-215 (2012) para classificar APKs em datasets mais recentes, utilizando todas as suas permissões.
 
-**Intersection_tests**
+**Permissions_in_common**
 
-   Contém os códigos referentes ao desempenho do modelo, adequado para o Drebin (2012) e validado em datasets mais recentes, utilizando as mesmas permissões. São dois experimentos:
+   Contém os códigos referentes ao desempenho do modelo, adequado para o Drebin-215 (2012) e validado em datasets mais recentes, utilizando as mesmas permissões em comum. São dois experimentos:
 
-   * 1° Experimento: utiliza 4 datasets com as mesmas 13 permissões + class (Drebin215, Androcrawl, AndroidMalwareNormal e DefenseDroid).
+   *13_Permissions:* utiliza 4 datasets com as mesmas 13 permissões + class (Drebin215, Androcrawl, AndroidMalwareNormal e DefenseDroid).
 
-   * 2° Experimento: utiliza 4 datasets com as mesmas 55 permissões + class (Drebin215, KronoDroid, DefenseDroid e MotoDroid_22K).
+   *55_Permissions:* utiliza 4 datasets com as mesmas 55 permissões + class (Drebin-215, KronoDroid, DefenseDroid e MotoDroid_22K).
 
 ### Diretório 8_SigPID_Test
 Contém o código referente a exploração do número de permissões selecionadas pelo SigPID em cada dataset de intersecção (sem duplicatas), para analisar a ligação que possui com os resultados dos modelos. Os resultados serão exibidos a seguir, junto com o desempenho do modelo antes e depois do SigPID:
@@ -153,17 +159,17 @@ Contém o código referente a exploração do número de permissões selecionada
 
 **MOTODROID_22K**
 
-   * Sofreu uma redução de 24.30%
+   * Sofreu uma redução de 20.83%
 
-   * Características - 144 >> 109
+   * Características - 144 >> 114
 
-   * Benignos >> 11.032
+   * Benignos >> 11.009
 
-   * Malignos >> 11.144
+   * Malignos >> 11.028
 
    * Desempenho do modelo antes do SigPID  >> 82.71%
 
-   * Desempenho do modelo depois do SigPID >> 73.62%
+   * Desempenho do modelo depois do SigPID >> 75.39%
 
 A seguir, serão mostradas quantas permissões relevantes selecionadas pelo SigPID cada dataset dos três experimentos possuem, assim como o respectivo desempenho do modelo RandomForest para cada dataset sem duplicatas (caso ideal), utilizando a métrica ROC_AUC:
 
@@ -189,9 +195,9 @@ A seguir, serão mostradas quantas permissões relevantes selecionadas pelo SigP
 
    * Modelo                   >> 82.42 %
 
-   *MotoDroid_22K*             >> 109/144 Permissões + class.
+   *MotoDroid_22K*             >> 113/144 Permissões + class.
 
-   * Modelo                   >> 78.51 %
+   * Modelo                   >> 75.39 %
 
 **1° Experimento de intersecção:**
 
